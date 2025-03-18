@@ -1,4 +1,4 @@
-## Beta Version
+## Open Beta Version
 ### App
 ![image](https://github.com/user-attachments/assets/b1990be8-ae0d-47d9-90b0-656c9fc0e2ce)
 
