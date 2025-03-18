@@ -1,4 +1,5 @@
 "use client"
+
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
@@ -6,12 +7,11 @@ const AppTitle = () => {
     const [isVisible, setIsVisible] = useState(true);
 
     return (
-        <header className="text-center py-3 bg-gray-900 text-white ">
+        <header className="text-center py-3 px-10 bg-gray-900 text-white ">
             <h1 className="text-4xl font-bold animate-fade-in-up mt-4 gradient-text">ScrollGallery</h1>
             {isVisible && (
-                <p className="text-lg mt-3 max-w-2xl mx-auto animate-fade-in-up">
-                    ScrollGallery is an infinite scrolling image gallery that lets you explore endless pictures seamlessly. Enjoy a smooth and immersive browsing experience with high-quality images loaded dynamically.
-                </p>
+                <p className="text-md md:text-lg mt-4 max-w-2xl mx-auto animate-fade-in-up">
+                    ScrollGallery lets you explore an infinite stream of high-quality images seamlessly. Enjoy smooth and immersive browsing with dynamic loading.                </p>
             )}
             <div className="flex justify-center mt-2">
                 <button
