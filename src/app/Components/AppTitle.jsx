@@ -15,11 +15,11 @@ const AppTitle = () => {
             )}
             <div className="flex justify-center mt-2">
                 <button
-                    className="px-3 py-1.5 text-white rounded transition focus:outline-none hover:bg-gray-600 flex items-center gap-2 relative group"
+                    className="px-3 py-1.5 text-white rounded transition focus:outline-none hover:bg-gray-600 flex items-center gap-2 relative group hover:cursor-pointer"
                     onClick={() => setIsVisible(!isVisible)}
                 >
                     {isVisible ? <FiEyeOff size={16} /> : <FiEye size={16} />}
-                    <span className="absolute left-[45px] hidden group-hover:block bg-gray-800 text-white text-sm px-2 py-1 rounded transition">
+                    <span className="absolute left-[45px] hidden group-hover:block bg-gray-800 text-white text-sm px-2 py-1 rounded transition ">
                         {isVisible ? "Hide Description" : "Show Description"}
                     </span>
                 </button>

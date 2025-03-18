@@ -28,19 +28,19 @@ const ImageGal = () => {
     };
 
     return (
-        <div className="columns-3 gap-4 p-4">
+        <div className="columns-3 gap-4 p-4 animate-fade-in-up">
             {images.map((img) => (
-                <div key={img.id} className="break-inside-avoid mb-4 rounded-md p-2 shadow-lg bg-white">
+                <div key={img.id} className="break-inside-avoid mb-4 rounded-md p-2 shadow-lg bg-white hover:scale-105 transition duration-200">
                     <img src={img.url} alt="Gallery" className="w-full h-auto rounded-md" />
                     <div className="mt-2 flex flex-wrap gap-2">
                         {img.tags.map((tag, index) => (
-                            <span key={index} className="px-2 py-1 text-xs bg-red-100 border border-red-400 text-red-500 rounded">
+                            <span key={index} className="px-2 py-1 text-xs bg-blue-100 border border-blue-400 text-blue-500 rounded hover:bg-blue-400 hover:text-blue-100 hover:cursor-pointer">
                                 {tag}
                             </span>
                         ))}
                         <button
                             onClick={() => addTag(img.id)}
-                            className="px-2 py-1 text-xs bg-white border border-red-400 text-red-500 rounded hover:bg-red-200"
+                            className="px-2 py-1 text-xs bg-white border border-blue-400 text-blue-500 rounded hover:bg-blue-200 hover:cursor-pointer"
                         >
                             +
                         </button>
