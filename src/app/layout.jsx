@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Gallary Image App",
-  description: "Gallary Image App",
+  title: "ScrollGallery ",
+  description: "ScrollGallery , Gallary Image App",
 };
 
 export default function RootLayout({ children }) {

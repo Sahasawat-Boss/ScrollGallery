@@ -1,9 +1,11 @@
-import Image from "next/image";
+import Nav from "./Components/Nav";
+import AppTitle from "./Components/AppTitle";
 
 export default function Home() {
   return (
     <div>
-      Hello Gall App
+      <Nav />
+      <AppTitle />
     </div>
   );
 }
