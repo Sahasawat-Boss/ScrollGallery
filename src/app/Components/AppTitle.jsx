@@ -7,7 +7,7 @@ const AppTitle = () => {
 
     return (
         <header className="text-center py-3 bg-gray-900 text-white ">
-            <h1 className="text-4xl font-bold animate-fade-in-up mt-4">ScrollGallery</h1>
+            <h1 className="text-4xl font-bold animate-fade-in-up mt-4 gradient-text">ScrollGallery</h1>
             {isVisible && (
                 <p className="text-lg mt-3 max-w-2xl mx-auto animate-fade-in-up">
                     ScrollGallery is an infinite scrolling image gallery that lets you explore endless pictures seamlessly. Enjoy a smooth and immersive browsing experience with high-quality images loaded dynamically.
