@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 // List of possible tags
-const tagPool = ["AI", "Tech", "Innovation", "Developer", "Explore", "Coding", "Test", "Gallery", "Stack"];
+const tagPool = ["AI", "Tech", "Innovation", "Developer", "Explore", "Coding", "Test", "Gallery", "Stack", "Diversition" ];
 
 // Function to generate random tags (1-4 tags per image)
 const getRandomTags = () => {
@@ -57,8 +57,8 @@ const ImageGal = () => {
             {/* Filter Category Display */}
             {selectedTag && (
                 <div className="mb-6 text-center">
-                    <p className="inline-block px-4 py-2 bg-blue-500 text-white rounded">
-                        Tag Category: #{selectedTag}
+                    <p className="inline-block px-4 py-2 bg-blue-600 text-white rounded-full">
+                        Tag: #{selectedTag}
                     </p>
                     <button
                             onClick={() => setSelectedTag(null)}
@@ -74,7 +74,7 @@ const ImageGal = () => {
                 {filteredImages.map((img) => (
                     <div
                         key={img.id}
-                        className="break-inside-avoid mb-4 rounded-md p-2 shadow-xl bg-white hover:scale-105 transition duration-200"
+                        className="break-inside-avoid mb-4 rounded-md p-2 shadow-xl shadow-black/15 bg-white hover:scale-105 transition duration-200"
                     >
                         <img src={img.url} alt="Gallery" className="w-full h-full rounded-md" />
                         <div className="mt-2 flex flex-wrap gap-2">
@@ -82,7 +82,7 @@ const ImageGal = () => {
                                 <button
                                     key={index}
                                     onClick={() => setSelectedTag(tag)}
-                                    className="px-2 py-1 text-sm lg:text-base bg-blue-100 border border-blue-400 text-blue-500 rounded hover:bg-blue-400 hover:text-blue-100 hover:cursor-pointer"
+                                    className="px-2 py-0.5 text-sm lg:text-base bg-blue-100 border border-blue-400 text-blue-500  rounded-full hover:bg-blue-400 hover:text-blue-100 hover:cursor-pointer"
                                 >
                                     {tag}
                                 </button>

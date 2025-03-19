@@ -26,7 +26,7 @@ const AppTitle = () => {
 
             )}
 
-            <div className="flex justify-center mt-3">
+            <div className="flex justify-center mt-3 animate-fade-in-up">
                 <button
                     className="px-4 py-2 bg-gray-800 text-white rounded transition focus:outline-none hover:bg-gray-600 flex items-center gap-2 relative group hover:cursor-pointer"
                     onClick={() => setIsVisible(!isVisible)}

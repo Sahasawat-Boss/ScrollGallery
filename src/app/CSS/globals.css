@@ -66,3 +66,12 @@
     @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
 }
 }
+
+/*!--- Custom CSS -------- */
+/* Custom BG Grid Pattern */
+.bg-grid-pattern {
+  background-color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px; /*<---- Grid size */
+}
