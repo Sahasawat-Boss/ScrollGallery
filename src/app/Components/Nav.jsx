@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
+import { LuImageDown } from "react-icons/lu";
+import Image from "next/image";
 
 const Nav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -14,18 +16,23 @@ const Nav = () => {
         <nav className="bg-gray-900 text-white py-3 px-8 shadow-lg relative">
             <div className="flex justify-between items-center">
                 {/* Logo */}
-                <h1 className="text-2xl font-bold gradient-text animate-fade-in-down">
-                    <Link href="/">ScrollGallery</Link>
-                </h1>
+                <Link href="/">
+                    <div className="flex text-2xl animate-fade-in-down">
+                        <span className="pt-1 pr-2"><Image src='/logo.png' width={26} height={26} alt="logo" /></span>
+                        <span className="gradient-text font-semibold">ScrollGallery</span>
+                    </div>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <ul className="hidden md:flex space-x-6 text-lg animate-fade-in-down">
                     <li className="hover:text-blue-400 transition">
-                        <Link href="/">Home</Link>
+                        <Link href="/">
+                            Home
+                        </Link>
                     </li>
-                    <li className="hover:text-blue-400 transition">
-                        <Link href="/">About</Link>
-                    </li>
+                    <Link href="/" className="pt-1.5">
+                        <span className="text-white hover:text-blue-400 transition"><LuImageDown /></span>
+                    </Link>
                 </ul>
 
                 {/* Mobile Menu Button */}
