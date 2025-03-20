@@ -4,10 +4,9 @@ const FilterCategory = ({ selectedTag, clearFilter }) => {
     return (
         <div className="mb-3 flex flex-col justify-center items-center gap-2 ">
             {/* Tag Display */}
-            <div className="gradient-bg px-5 py-2 rounded-md shadow-md animate-fade-in-down">
-                <div className="drop-shadow-xl">
-                    Tag: #{selectedTag ? selectedTag : "All"}
-                </div>
+            <div className="gradient-bg animate-fade-in-down">
+                Tag: #{selectedTag ? selectedTag : "All"}
+
             </div>
 
             {/* Clear Button (Only Show If Tag is Selected) */}

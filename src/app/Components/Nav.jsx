@@ -13,7 +13,7 @@ const Nav = () => {
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <nav className="bg-gray-900 text-white py-3 px-8 shadow-lg relative">
+        <nav className="bg-gray-900 text-white py-3 px-3 shadow-lg relative">
             <div className="flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/">
@@ -47,16 +47,16 @@ const Nav = () => {
             {/* Mobile Menu (Absolute Positioned) */}
             {menuOpen && (
                 <div
-                    className="absolute top-12 right-14 w-44 bg-gray-800 text-white rounded-b-lg shadow-md rounded  animate-fade-in-right"
+                    className="absolute top-10 right-8 w-44 bg-gray-800 text-white rounded-b-lg shadow-md rounded  animate-fade-in-right"
                 >
                     <ul className="text-lg">
                         <Link href="/" onClick={toggleMenu}>
-                            <li className="hover:bg-blue-500 transition p-3 rounded-t">
+                            <li className="hover:bg-blue-600 transition p-2.5 rounded-t">
                                 Home
                             </li>
                         </Link>
                         <Link href="/" onClick={toggleMenu}>
-                            <li className="hover:bg-blue-500 transition p-3">
+                            <li className="hover:bg-blue-600 transition p-2.5">
                                 About
                             </li>
                         </Link>
