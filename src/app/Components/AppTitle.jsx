@@ -9,7 +9,7 @@ const AppTitle = () => {
 
     return (
         <header className="text-center pt-2 pb-7 px-10 bg-gray-900 text-white drop-shadow-lg">
-            <h1 className="text-4xl lg:text-5xl font-bold animate-fade-in-right mt-4 p-1 gradient-text">
+            <h1 className="text-4xl lg:text-5xl font-bold animate-fade-in-right p-1 gradient-text">
                 ScrollGallery
             </h1>
             <p className="mt-4 md:text-lg animate-fade-in-left">

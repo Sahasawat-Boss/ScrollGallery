@@ -25,7 +25,7 @@ const ImageGal = () => {
 
     // Load initial images
     useEffect(() => {
-        loadMoreImages(12); // Load 12 images initially
+        loadMoreImages(12); // Default to 12 images initially
     }, []);
 
     // Load More Images (for Infinite Scroll)

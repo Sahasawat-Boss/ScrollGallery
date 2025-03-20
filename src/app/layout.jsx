@@ -1,3 +1,7 @@
+import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/Scrolltotop";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./CSS/globals.css";
 
@@ -22,7 +26,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Nav />
         {children}
+        <ScrollToTop/>
+        <Footer />
       </body>
     </html>
   );
