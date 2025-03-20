@@ -37,7 +37,7 @@ const Nav = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white text-2xl focus:outline-none hover:bg-gray-700 p-2 rounded"
+                    className="md:hidden text-white text-2xl focus:outline-none hover:bg-gray-700 p-2 rounded  animate-fade-in-up"
                     onClick={toggleMenu}
                 >
                     {menuOpen ? <FiX /> : <FiMenu />}
@@ -47,7 +47,7 @@ const Nav = () => {
             {/* Mobile Menu (Absolute Positioned) */}
             {menuOpen && (
                 <div
-                    className="absolute top-12 right-14 w-44 bg-gray-800 text-white rounded-b-lg shadow-md rounded animate-fade-in"
+                    className="absolute top-12 right-14 w-44 bg-gray-800 text-white rounded-b-lg shadow-md rounded  animate-fade-in-right"
                 >
                     <ul className="text-lg">
                         <Link href="/" onClick={toggleMenu}>

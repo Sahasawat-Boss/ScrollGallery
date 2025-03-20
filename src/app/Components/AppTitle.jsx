@@ -8,28 +8,28 @@ const AppTitle = () => {
 
 
     return (
-        <header className="text-center py-6 px-10 bg-gray-900 text-white shadow-md">
-            <h1 className="text-4xl lg:text-5xl font-bold animate-fade-in-up mt-4 p-1 gradient-text">
+        <header className="text-center py-4 px-10 bg-gray-900 text-white shadow-md">
+            <h1 className="text-4xl lg:text-5xl font-bold animate-fade-in-right mt-4 p-1 gradient-text">
                 ScrollGallery
             </h1>
-            <p className="my-4 lg:text-lg">
+            <p className="my-4 md:text-lg animate-fade-in-left">
                 Explore an endless collection of images with auto-generated tags.
             </p>
             {isVisible && (
-                <div className="mt-4 max-w-lg mx-auto animate-fade-in-up text-gray-200">
+                <div className="mt-4 w-fit mx-auto animate-fade-in-up text-gray-200">
 
-                    <ul className="list-disc list-inside text-gray-300 text-left pl-10 lg:text-lg">
-                        <strong>Features:</strong>
-                        <li><strong>Click tags</strong> to instantly find related images.</li>
-                        <li><strong>Add tags</strong> to organize images your way.</li>
-                        <li><strong>Infinite scrolling</strong> for endless discovery.</li>
-                        <li><strong>Fully responsive</strong> for seamless viewing on any device.</li>
-                        <li><strong>Fast loading</strong> with optimized performance.</li>
-                        <li><strong>Clean UI</strong> with a modern, user-friendly design.</li>
+                    <ul className="list-disc list-inside text-gray-300 text-sm sm:text-md md:text-lg flex flex-col items-center">
+                        <strong className="text-center border-b-1 border-gray-400 text-lg">Features</strong>
+                        <div className="pl-10 pt-2 text-left">
+                            <li><strong>Click tags</strong> to instantly find related images.</li>
+                            <li><strong>Add tags</strong> to organize images your way.</li>
+                            <li><strong>Infinite scrolling</strong> for endless discovery.</li>
+                            <li><strong>Fully responsive</strong> for viewing on any device.</li>
+                            <li><strong>Fast loading</strong> with optimized performance.</li>
+                            <li><strong>Clean UI</strong> with a modern, user-friendly design.</li>
+                        </div>
                     </ul>
-
                 </div>
-
             )}
 
             <div className="flex justify-center mt-3 animate-fade-in-up">
