@@ -8,7 +8,7 @@ const AppTitle = () => {
 
 
     return (
-        <header className="text-center pt-2 pb-7 px-10 bg-gray-900 text-white shadow-md">
+        <header className="text-center pt-2 pb-7 px-10 bg-gray-900 text-white drop-shadow-lg">
             <h1 className="text-4xl lg:text-5xl font-bold animate-fade-in-right mt-4 p-1 gradient-text">
                 ScrollGallery
             </h1>
@@ -32,7 +32,7 @@ const AppTitle = () => {
             {isVisible && (
                 <div className=" animate-fade-in-up text-gray-200 py-1.5">
                     <ul className="list-disc list-inside text-gray-300 text-sm sm:text-md md:text-lg flex flex-col items-center">
-                        <div className=" pt-2 text-left">
+                        <div className="flex flex-col gap-1 pt-2 text-left">
                             <li><strong>Click tags</strong> to instantly find related images.</li>
                             <li><strong>Add tags</strong> to organize images your way.</li>
                             <li><strong>Infinite scrolling</strong> for endless discovery.</li>
