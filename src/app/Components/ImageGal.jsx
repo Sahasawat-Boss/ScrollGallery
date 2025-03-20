@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import FilterCategory from "./FilterCategory"; // ✅ Import new component
 
 // List of possible tags
-const tagPool = ["AI", "Tech", "Innovation", "Developer", "Explore", "Coding", "Test", "Gallery", "Stack", "Diversition" ];
+const tagPool = ["AI", "Tech", "Innovation", "Developer", "Explore", "Coding", "Test", "Gallery", "Stack", "Diversition"];
 
 // Function to generate random tags (1-4 tags per image)
 const getRandomTags = () => {
@@ -11,30 +12,45 @@ const getRandomTags = () => {
     return shuffled.slice(0, Math.floor(Math.random() * 4) + 1);
 };
 
-const ImageGal = () => {
-    const initialImages = [
-        { id: 1, url: "https://placehold.co/250x250", tags: [] },
-        { id: 2, url: "https://placehold.co/250x200", tags: [] },
-        { id: 3, url: "https://placehold.co/300x300", tags: [] },
-        { id: 4, url: "https://placehold.co/220x200", tags: [] },
-        { id: 5, url: "https://placehold.co/280x150", tags: [] },
-        { id: 6, url: "https://placehold.co/230x170", tags: [] },
-        { id: 7, url: "https://placehold.co/270x250", tags: [] },
-        { id: 8, url: "https://placehold.co/290x180", tags: [] },
-        { id: 9, url: "https://placehold.co/310x220", tags: [] },
-        { id: 10, url: "https://placehold.co/350x400", tags: [] },
-        { id: 11, url: "https://placehold.co/350x400", tags: [] },
-    ];
+// Function to generate random image sizes
+const getRandomSize = () => {
+    const width = Math.floor(Math.random() * 150) + 200;  // Width between 200-350px
+    const height = Math.floor(Math.random() * 100) + 200; // Height between 200-300px
+    return `${width}x${height}`;
+};
 
+const ImageGal = () => {
     const [images, setImages] = useState([]);
     const [selectedTag, setSelectedTag] = useState(null);
 
-    // Auto-generate random tags for images with empty tags
+    // Load initial images
     useEffect(() => {
-        const updatedImages = initialImages.map((img) =>
-            img.tags.length === 0 ? { ...img, tags: getRandomTags() } : img
-        );
-        setImages(updatedImages);
+        loadMoreImages(12); // Load 12 images initially
+    }, []);
+
+    // Load More Images (for Infinite Scroll)
+    const loadMoreImages = (count = 6) => {
+        const newImages = Array.from({ length: count }, () => ({
+            id: crypto.randomUUID(), // ✅ Generate a unique ID for each image
+            url: `https://placehold.co/${getRandomSize()}`, // Random image size
+            tags: getRandomTags(),
+        }));
+
+        setImages((prevImages) => [...prevImages, ...newImages]);
+    };
+
+    // Detect Scroll Position for Infinite Scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            if (
+                window.innerHeight + window.scrollY >= document.body.offsetHeight - 100
+            ) {
+                loadMoreImages(); // Load more images when reaching the bottom
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const addTag = (id) => {
@@ -42,7 +58,9 @@ const ImageGal = () => {
         if (tag) {
             setImages((prev) =>
                 prev.map((img) =>
-                    img.id === id ? { ...img, tags: [...img.tags, tag] } : img
+                    img.id === id
+                        ? { ...img, tags: [...new Set([...img.tags, tag])] } // ✅ Avoid duplicate tags
+                        : img
                 )
             );
         }
@@ -50,39 +68,28 @@ const ImageGal = () => {
 
     // Filter images by selected tag
     const filteredImages = selectedTag
-        ? images.filter((img) => img.tags.includes(selectedTag)) : images;
+        ? images.filter((img) => img.tags.includes(selectedTag))
+        : images;
 
     return (
         <div className="p-6 animate-fade-in-up lg:max-w-7xl mx-auto">
-            {/* Filter Category Display */}
-            {selectedTag && (
-                <div className="mb-6 text-center">
-                    <p className="inline-block px-4 py-2 bg-blue-600 text-white rounded-full">
-                        Tag: #{selectedTag}
-                    </p>
-                    <button
-                            onClick={() => setSelectedTag(null)}
-                            className="relative ml-2 text-black hover:cursor-pointer hover:scale-110 transform"
-                        >
-                            <div className="absolute left-0 -top-5">Clear</div>
-                        </button>
-                </div>
-            )}
+            {/* ✅ Filter Category Display Component */}
+            <FilterCategory selectedTag={selectedTag} clearFilter={() => setSelectedTag(null)} />
 
             {/* Masonry Grid */}
             <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
                 {filteredImages.map((img) => (
                     <div
-                        key={img.id}
-                        className="break-inside-avoid mb-4 rounded-md p-2 shadow-xl shadow-black/15 bg-white hover:scale-105 transition duration-200"
+                        key={img.id} // ✅ Unique image key
+                        className="break-inside-avoid mb-4 rounded-md p-2 shadow-xl shadow-black/15 bg-white hover:scale-105 transition duration-200 animate-fade-in-up"
                     >
                         <img src={img.url} alt="Gallery" className="w-full h-full rounded-md" />
                         <div className="mt-2 flex flex-wrap gap-2">
-                            {img.tags.map((tag, index) => (
+                            {img.tags.map((tag) => (
                                 <button
-                                    key={index}
+                                    key={`${tag}-${img.id}`} // ✅ Unique tag key
                                     onClick={() => setSelectedTag(tag)}
-                                    className="px-2 py-0.5 text-sm lg:text-base bg-blue-100 border border-blue-400 text-blue-500  rounded-full hover:bg-blue-400 hover:text-blue-100 hover:cursor-pointer"
+                                    className="px-2 py-0.5 text-sm lg:text-base bg-blue-100 border border-blue-400 text-blue-500 rounded-full hover:bg-blue-400 hover:text-blue-100 hover:cursor-pointer"
                                 >
                                     {tag}
                                 </button>

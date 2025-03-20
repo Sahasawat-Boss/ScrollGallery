@@ -8,9 +8,9 @@ export default function Home() {
     <div>
       <Nav />
       <AppTitle />
-      <div className="bg-grid-pattern animate-fade-in-up">
+      <main className="bg-grid-pattern animate-fade-in-up">
         <ImageGal />
-      </div>
+      </main>
       <Footer />
     </div>
   );
