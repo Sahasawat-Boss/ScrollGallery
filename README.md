@@ -1,8 +1,12 @@
 # ScrollGallery
-- Open Alpha Version
-- Masonry Grid
+ScrollGallery is a dynamic **infinite scrolling image gallery** with **auto-generated tags**, allowing users to explore, filter, and categorize images seamlessly. Built with **Next.js, Tailwind CSS, this project delivers a fast and modern UI with smooth navigation.
+  
+[ScrollGallery Demo](https://scroll-gallery-boss.vercel.app/)
+
 ### App
-![image](https://github.com/user-attachments/assets/94553ae5-7f48-4242-b29f-6c84d5d4eb89)
+![image](https://github.com/user-attachments/assets/05e17dee-a72a-47aa-b67f-ef6456bcd647)
+
 
 ### Design
-![image](https://github.com/user-attachments/assets/8c1f6d67-a2c6-4f8a-942f-b3b24bf5be84)
+
+![design png](https://github.com/user-attachments/assets/ca7ee035-e44a-445d-a461-d2dec177abcd)
