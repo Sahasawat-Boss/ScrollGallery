@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import ReloadPageButton from "./ReloadPageButton";
 
 const AppTitle = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +24,7 @@ const AppTitle = () => {
                     onClick={() => setIsVisible(!isVisible)}
                 >   Features
                     <div className="pt-1">{isVisible ? <FiEyeOff size={18} /> : <FiEye size={18} />}</div>
-                    <span className="hidden group-hover:block absolute -top-8 left-20 w-32 bg-gray-700 text-white text-sm px-4 py-2 rounded-md transition">
+                    <span className="hidden group-hover:block absolute -top-8 left-28 w-32 bg-gray-500 text-white text-sm px-4 py-2 rounded-md transition">
                         {isVisible ? "Hide Features" : "Show Features"}
                     </span>
                 </button>
@@ -36,13 +37,14 @@ const AppTitle = () => {
                             <li><strong>Click tags</strong> to instantly find related images.</li>
                             <li><strong>Add tags</strong> to organize images your way.</li>
                             <li><strong>Infinite scrolling</strong> for endless discovery.</li>
-                            <li><strong>Fully responsive</strong> for viewing on any device.</li>
-                            <li><strong>Fast loading</strong> with optimized performance.</li>
+                            <li><strong>Responsive</strong> for viewing on any device.</li>
                             <li><strong>Clean UI</strong> with a modern, user-friendly design.</li>
+                            <span className="flex justify-center pt-2"><ReloadPageButton/></span>
                         </div>
                     </ul>
                 </div>
             )}
+
         </header>
     );
 };

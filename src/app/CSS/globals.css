@@ -80,6 +80,9 @@
   .gradient-back-button {
     @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-bold px-5 py-2 rounded-sm inline-block hover:scale-110 transition hover:opacity-70;
   }
+  .gradient-re-button {
+    @apply bg-gradient-to-r from-blue-600 to-blue-900 text-white font-bold px-2.5 py-2 rounded-sm inline-block hover:scale-110 transition hover:opacity-70 hover:cursor-pointer;
+  }
 }
 
 /* Tailwind’s bg-clip-text requires display: inline ---->inline-block: Ensures the gradient is applied correctly.*/

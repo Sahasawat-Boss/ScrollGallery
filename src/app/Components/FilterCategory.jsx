@@ -2,7 +2,7 @@ import { FiXCircle } from "react-icons/fi"; // ✅ Import React Icon
 
 const FilterCategory = ({ selectedTag, clearFilter }) => {
     return (
-        <div className="mb-3 flex flex-col justify-center items-center gap-2 ">
+        <div className="flex flex-col justify-center items-center gap-2 ">
             {/* Tag Display */}
             <div className="gradient-bg animate-fade-in-down">
                 Tag: #{selectedTag ? selectedTag : "All"}
