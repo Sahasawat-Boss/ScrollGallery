@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Nav />
       <AppTitle />
-      <main className="bg-grid-pattern animate-fade-in-up">
+      <main className="bg-grid-pattern animate-fade-in-up flex flex-grow">
         <ImageGal />
       </main>
       <ScrollToTop/>

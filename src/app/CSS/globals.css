@@ -14,7 +14,7 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 1s ease-in-out;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
 /* Fade In Down Animation */
@@ -31,7 +31,7 @@
 }
 
 .animate-fade-in-down {
-  animation: fadeInDown 1s ease-in-out;
+  animation: fadeInDown 0.6s ease-in-out;
 }
 
 /* Fade In Left Animation */
@@ -48,7 +48,7 @@
 }
 
 .animate-fade-in-left {
-  animation: fadeInLeft 1s ease-in-out;
+  animation: fadeInLeft 0.8s ease-in-out;
 }
 
 /* Fade In Right Animation */
@@ -65,7 +65,7 @@
 }
 
 .animate-fade-in-right {
-  animation: fadeInRight 1s ease-in-out;
+  animation: fadeInRight 0.8s ease-in-out;
 }
 
 /*!---Tailwind CSS Apply-------- */
